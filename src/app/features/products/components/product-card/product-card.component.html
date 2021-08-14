@@ -1,0 +1,12 @@
+<div class="card">
+    <img width="30%" height="30%"
+        [src]="product?.img">
+    <div class="card-description">
+        <p><b>{{product?.category}}</b></p>
+        <h3>Preço: {{product?.price}}</h3>
+        <p>Quantidade: {{product?.quantity}}</p>
+        <a [href]="product?.datasheet">Datasheet</a>
+        
+    </div>
+    
+</div>
