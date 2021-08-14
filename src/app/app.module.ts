@@ -19,8 +19,10 @@ import { MatListModule } from '@angular/material/list';
   declarations: [
     AppComponent,
     //HeaderComponent,
+
     //FooterComponent,
     HomePageComponent
+
   ],
   imports: [
     BrowserModule,
