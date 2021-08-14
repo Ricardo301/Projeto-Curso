@@ -14,7 +14,7 @@ const components = [
   declarations: [...components],
   imports: [
     CommonModule,
-   // RouterModule
+   
   ],
   exports:[
     ...components
