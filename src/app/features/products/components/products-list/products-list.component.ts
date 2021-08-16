@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MatTableDataSource } from '@angular/material/table';
 import { Product } from '../../models/product.model';
 
 @Component({
@@ -7,6 +8,7 @@ import { Product } from '../../models/product.model';
   styleUrls: ['./products-list.component.scss']
 })
 export class ProductsListComponent implements OnInit {
+ 
   products: Array<Product> = [
     {
       id: 1, 
@@ -17,11 +19,20 @@ export class ProductsListComponent implements OnInit {
       datasheet:'http://www.farnell.com/datasheets/1682238.pdf'
     },
   ];
-  filtroProduto: Array<Product> = this.products;
+ 
+ 
+  //loading = true;
+  subscription = [];
+ 
+  //dataSource = ;
 
   constructor() { }
 
   ngOnInit(): void {
+    this.subscription.push(
+    
+    )
+    
   }
  
 

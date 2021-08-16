@@ -3,9 +3,9 @@
         [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
         [mode]="(isHandset$ | async) ? 'over' : 'side'"
         [opened]="(isHandset$ | async) === false">
-      <mat-toolbar>Menu</mat-toolbar>
+      <mat-toolbar >Menu</mat-toolbar>
       <mat-nav-list>
-        <a mat-list-item href="#">Home</a>
+        <a mat-list-item href="#" >Home</a>
         <a mat-list-item href="#">Pesquisa</a>
         <a mat-list-item href="#">Categdorias</a>
       </mat-nav-list>
@@ -23,6 +23,7 @@
         <span>Electronics</span>
       </mat-toolbar>
          <app-products-list></app-products-list>
+         
     </mat-sidenav-content>
   </mat-sidenav-container>
   
