@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { LOCALE_ID, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -16,6 +16,9 @@ import { HomePageComponent } from './shared/home-page/home-page.component';
 import { ProductsListComponent } from './features/products/components/products-list/products-list.component';
 import { ProductsModule } from './features/products/products.module';
 
+import localePt from '@angular/common/locales/pt';
+import { registerLocaleData } from '@angular/common';
+registerLocaleData(localePt);
 
 
 
@@ -44,12 +47,16 @@ import { ProductsModule } from './features/products/products.module';
     MatSidenavModule,
     MatIconModule,
     MatListModule,
-    ProductsModule
+    ProductsModule,
+    
    
     
     
   ],
-  providers: [],
+  providers: [  {
+    provide: LOCALE_ID,
+    useValue: 'pt-BR'
+  }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

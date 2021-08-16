@@ -6,15 +6,15 @@
           The actual rendered columns are set as a property on the row definition" -->
   
     <!-- Position Column -->
-    <ng-container matColumnDef="img" >
-      <th mat-header-cell *matHeaderCellDef> Image Url </th>
+    <ng-container matColumnDef="img" class="header-image">
+      <th mat-header-cell *matHeaderCellDef> Produto </th>
       <td mat-cell *matCellDef="let products" > <img [src]="products.img" class="product-list" /> </td>
     </ng-container>
   
     <!-- Name Column -->
     <ng-container matColumnDef="price">
       <th mat-header-cell *matHeaderCellDef> Preço </th>
-      <td mat-cell *matCellDef="let products"> {{products.price | currency}} </td>
+      <td mat-cell *matCellDef="let products"> {{products.price | currency:'BRL'}} </td>
     </ng-container>
   
     <!-- Weight Column -->
@@ -25,7 +25,7 @@
   
     <!-- Symbol Column -->
     <ng-container matColumnDef="symbol">
-      <th mat-header-cell *matHeaderCellDef> Action </th>
+      <th mat-header-cell *matHeaderCellDef> Adicionar ao carrinho </th>
       <td mat-cell *matCellDef="let product"> 
           <button mat-raised-button color="primary">
               <mat-icon>add_shopping_cart</mat-icon>
