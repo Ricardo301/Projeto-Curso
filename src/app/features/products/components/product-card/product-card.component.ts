@@ -18,6 +18,8 @@ export class ProductCardComponent implements OnInit {
    
   dataSource:Array<Product> = [];
   displayedColumns: string[] =[];
+
+  
   
   
   // filtroProduto: Array<Product> = this.products;

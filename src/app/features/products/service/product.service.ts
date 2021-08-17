@@ -1,6 +1,8 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Product } from '../models/product.model';
+import {map} from 'rxjs/operators'
 
 @Injectable({
   providedIn: 'root'
@@ -58,11 +60,17 @@ export class ProductService {
    dataSource: Array<Product> =this.products;
    displayedColumns: string[] = ['img', 'price', 'datasheet','symbol'];
 
-  constructor() { }
+  constructor(private http: HttpClient) { }
    
 
    getProducts(){
      return this.products
+   }
+   getPrpduct(){
+     return this.http.get<any>("https://fakestoreapi.com/products/category/electronics")
+     .pipe(map((res:any)=>{
+       return res
+     }))
    }
    
 }

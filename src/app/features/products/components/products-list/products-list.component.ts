@@ -13,6 +13,8 @@ export class ProductsListComponent implements OnInit {
  
  products: Array <Product> = [];
 
+ public productList: any;
+
   
  
  
@@ -21,11 +23,16 @@ export class ProductsListComponent implements OnInit {
  
   //dataSource = ;
 
-  constructor(private productS:ProductService) { }
+  constructor(private productS:ProductService, private api:ProductService) { }
 
   ngOnInit(): void {
     
     this.products = this.productS.products
+
+    this.api.getPrpduct()
+    .subscribe(res=>{
+      this.productList = res;
+    })
     
   }
  

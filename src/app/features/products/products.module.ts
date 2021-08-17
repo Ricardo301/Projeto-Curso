@@ -6,15 +6,16 @@ import {MatCardModule} from '@angular/material/card';
 import {MatTableModule} from '@angular/material/table';
 import {MatButtonModule} from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
+import { CartComponent } from './components/cart/cart.component';
 
 
 @NgModule({
-  declarations: [ProductCardComponent, ProductsListComponent],
+  declarations: [ProductCardComponent, ProductsListComponent, CartComponent],
   imports: [
     CommonModule, MatCardModule,MatTableModule, MatButtonModule, MatIconModule
   
   ],
   
-  exports:[ProductsListComponent,ProductCardComponent]
+  exports:[ProductsListComponent,ProductCardComponent,CartComponent]
 })
 export class ProductsModule { }
