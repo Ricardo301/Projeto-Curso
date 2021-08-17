@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
 import { Product } from '../models/product.model';
 
 @Injectable({
@@ -63,4 +64,5 @@ export class ProductService {
    getProducts(){
      return this.products
    }
+   
 }

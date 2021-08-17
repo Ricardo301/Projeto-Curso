@@ -18,6 +18,10 @@ import { ProductsModule } from './features/products/products.module';
 
 import localePt from '@angular/common/locales/pt';
 import { registerLocaleData } from '@angular/common';
+import {MatInputModule} from '@angular/material/input';
+import { MatFormField, MatFormFieldModule } from '@angular/material/form-field';
+import { HeaderComponent } from './shared/header/header.component';
+import { FormsModule } from '@angular/forms';
 registerLocaleData(localePt);
 
 
@@ -29,6 +33,7 @@ registerLocaleData(localePt);
     AppComponent,
     
     HomePageComponent,
+    
           
     
     
@@ -48,6 +53,9 @@ registerLocaleData(localePt);
     MatIconModule,
     MatListModule,
     ProductsModule,
+    MatInputModule,
+    MatFormFieldModule,
+    FormsModule
     
    
     
