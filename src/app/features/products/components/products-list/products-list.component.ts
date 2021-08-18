@@ -13,7 +13,7 @@ export class ProductsListComponent implements OnInit {
  
  products: Array <Product> = [];
 
- public productList: any;
+ //public productList: any;
 
   
  
@@ -21,7 +21,7 @@ export class ProductsListComponent implements OnInit {
   //loading = true;
   subscription = [];
  
-  //dataSource = ;
+  
 
   constructor(private productS:ProductService, private api:ProductService) { }
 
@@ -31,7 +31,7 @@ export class ProductsListComponent implements OnInit {
 
     this.api.getPrpduct()
     .subscribe(res=>{
-      this.productList = res;
+      this.products = res;
     })
     
   }

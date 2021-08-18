@@ -1,14 +1,16 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { observable, Observable } from 'rxjs';
 import { Product } from '../models/product.model';
-import {map} from 'rxjs/operators'
+import {map} from 'rxjs/operators';
+import { BehaviorSubject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ProductService {
-  products: Array <Product> = [
+  
+  products: Array <Product> =  [
     {
       id: 1,
       name: 'Arduino Nano', 
@@ -56,16 +58,18 @@ export class ProductService {
 
   ]
   filtroProduto: Array<Product> = this.products;
-
+  
    dataSource: Array<Product> =this.products;
    displayedColumns: string[] = ['img', 'price', 'datasheet','symbol'];
 
   constructor(private http: HttpClient) { }
    
 
-   getProducts(){
-     return this.products
-   }
+   
+    getProducts(){
+     
+    }
+   
    getPrpduct(){
      return this.http.get<any>("https://fakestoreapi.com/products/category/electronics")
      .pipe(map((res:any)=>{

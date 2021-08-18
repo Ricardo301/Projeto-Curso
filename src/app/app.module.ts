@@ -23,8 +23,12 @@ import { MatFormField, MatFormFieldModule } from '@angular/material/form-field';
 import { HeaderComponent } from './shared/header/header.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-import { CartComponent } from './features/page/cart/cart.component';
+
 registerLocaleData(localePt);
+
+import {MatBadgeModule} from '@angular/material/badge';
+import { CartPageComponent } from './features/page/cart-page/cart-page.component';
+import { ProductService } from './features/products/service/product.service';
 
 
 
@@ -33,15 +37,12 @@ registerLocaleData(localePt);
 @NgModule({
   declarations: [
     AppComponent,
-    
     HomePageComponent,
-          CartComponent,
-    
-          
-    
-    
+    CartPageComponent,
     
    
+    
+    
 
   ],
   imports: [
@@ -59,7 +60,9 @@ registerLocaleData(localePt);
     MatInputModule,
     MatFormFieldModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    MatBadgeModule,
+    
     
    
     
@@ -68,7 +71,9 @@ registerLocaleData(localePt);
   providers: [  {
     provide: LOCALE_ID,
     useValue: 'pt-BR'
-  }],
+  },
+  ProductService
+],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

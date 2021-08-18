@@ -1,6 +1,7 @@
 
 import { Component, Input, OnInit } from '@angular/core';
 import { Product } from '../../models/product.model';
+import { CartService } from '../../service/cart.service';
 import {ProductService} from '../../service/product.service';
 
 
@@ -19,6 +20,8 @@ export class ProductCardComponent implements OnInit {
   dataSource:Array<Product> = [];
   displayedColumns: string[] =[];
 
+  public totalItem: number =0;
+
   
   
   
@@ -27,7 +30,7 @@ export class ProductCardComponent implements OnInit {
   // dataSource: Array<Product> =this.products;
   //displayedColumns: string[] = ['img', 'price', 'datasheet','symbol'];
    
-  constructor(private Product:ProductService) {
+  constructor(private Product:ProductService,private cartService:CartService) {
     
     
    }
@@ -35,8 +38,21 @@ export class ProductCardComponent implements OnInit {
   ngOnInit(): void {
      this.dataSource = this.Product.dataSource;
      this.displayedColumns = this.Product.displayedColumns;
-    // this.products = this.Product.products
+    this.products = this.Product.products
+
+    this.products.forEach((a:any) => {
+      Object.assign(a,{quantity:1,total:a.price});
+    });
+    this.cartService.getProducts()
+    .subscribe(res=>{
+      this.totalItem = res.length;
+    })
+  }
     
+  
+
+  addTocart(products:any){
+    this.cartService.addToCart(products)
   }
   
   

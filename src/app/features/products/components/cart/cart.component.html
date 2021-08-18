@@ -1,1 +1,50 @@
 
+ <mat-card *ngIf="products.length !=0" >
+    <mat-card-content class="card">
+        <ng-container >
+            
+            <tr *ngFor="let item of products; let i = index">
+                <td>{{i+1}}</td>
+                <!-- <td>{{item.title}}</td> -->
+                <td><img style="width: 120px;" src="{{item.img}}" alt=""></td>
+                <!-- <td style="width: 25%;">{{item.description}}</td> -->
+                <th style="width: 12%;">{{item.price}}</th>
+                <td style="width: 12%;">{{item.quantity}}</td>
+                <td style="width: 12%;">{{item.datasheet}}</td>
+                <td>
+                  
+                </td>
+            </tr>
+          </ng-container>
+      
+     
+    </mat-card-content>
+   
+   </mat-card>
+   
+   
+   
+   
+   
+   
+   
+
+<ng-container *ngIf="products.length==0">
+    <div class="container">
+        <div class="card">
+            <h5 class="card-title">Meu carrinho</h5>
+        </div>
+        <div class="center">
+            <img src="data:image/png;base64,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" alt="">
+            <h4>Carrinho Vazio!</h4>
+            <h6>Compre Agora:</h6>
+            <a routerLink="/home">
+                <button mat-raised-button color="primary">Compre Agora</button>
+            </a>
+           
+        </div>
+    </div>
+</ng-container>
+
+
+
