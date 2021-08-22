@@ -1,10 +1,15 @@
 <mat-card >
+  
+ 
  <mat-card-content class="card">
     <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
 
+
+      
+      
     <!--- Note that these columns can be defined in any order.
           The actual rendered columns are set as a property on the row definition" -->
-  
+          
     <!-- img Column -->
     <ng-container matColumnDef="img" class="header-image">
       <th mat-header-cell *matHeaderCellDef> Produto </th>
@@ -39,11 +44,14 @@
   
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
     <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    
   </table>
+ 
   
  </mat-card-content>
 
 </mat-card>
+
 
 
 

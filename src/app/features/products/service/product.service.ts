@@ -65,16 +65,7 @@ export class ProductService {
   constructor(private http: HttpClient) { }
    
 
+
    
-    getProducts(){
-     
-    }
-   
-   getPrpduct(){
-     return this.http.get<any>("https://fakestoreapi.com/products/category/electronics")
-     .pipe(map((res:any)=>{
-       return res
-     }))
-   }
    
 }

@@ -6,17 +6,18 @@ import {MatCardModule} from '@angular/material/card';
 import {MatTableModule} from '@angular/material/table';
 import {MatButtonModule} from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
-import { CartComponent } from './components/cart/cart.component';
-import { CartListComponent } from './components/cart-list/cart-list.component';
+
+
+import { MatFormFieldModule } from '@angular/material/form-field';
 
 
 @NgModule({
-  declarations: [ProductCardComponent, ProductsListComponent,CartComponent, CartListComponent],
+  declarations: [ProductCardComponent, ProductsListComponent,],
   imports: [
-    CommonModule, MatCardModule,MatTableModule, MatButtonModule, MatIconModule,
+    CommonModule, MatCardModule,MatTableModule, MatButtonModule, MatIconModule,MatFormFieldModule
   
   ],
   
-  exports:[ProductsListComponent,ProductCardComponent,CartComponent,CartListComponent]
+  exports:[ProductsListComponent,ProductCardComponent]
 })
 export class ProductsModule { }

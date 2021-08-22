@@ -29,10 +29,7 @@ export class ProductsListComponent implements OnInit {
     
     this.products = this.productS.products
 
-    this.api.getPrpduct()
-    .subscribe(res=>{
-      this.products = res;
-    })
+    
     
   }
  

@@ -13,14 +13,14 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
 import { HomePageComponent } from './features/page/home-page/home-page.component';
-import { ProductsListComponent } from './features/products/components/products-list/products-list.component';
+
 import { ProductsModule } from './features/products/products.module';
 
 import localePt from '@angular/common/locales/pt';
 import { registerLocaleData } from '@angular/common';
 import {MatInputModule} from '@angular/material/input';
-import { MatFormField, MatFormFieldModule } from '@angular/material/form-field';
-import { HeaderComponent } from './shared/header/header.component';
+import {  MatFormFieldModule } from '@angular/material/form-field';
+
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
@@ -29,6 +29,9 @@ registerLocaleData(localePt);
 import {MatBadgeModule} from '@angular/material/badge';
 import { CartPageComponent } from './features/page/cart-page/cart-page.component';
 import { ProductService } from './features/products/service/product.service';
+import { CartComponent } from './features/products/components/cart/cart.component';
+import {MatCardModule } from '@angular/material/card';
+
 
 
 
@@ -39,6 +42,7 @@ import { ProductService } from './features/products/service/product.service';
     AppComponent,
     HomePageComponent,
     CartPageComponent,
+    CartComponent
     
    
     
@@ -62,6 +66,8 @@ import { ProductService } from './features/products/service/product.service';
     FormsModule,
     HttpClientModule,
     MatBadgeModule,
+    MatCardModule,
+   
     
     
    

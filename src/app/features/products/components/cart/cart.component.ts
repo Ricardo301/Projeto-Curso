@@ -18,20 +18,32 @@ export class CartComponent implements OnInit {
   public grandTotal !: number;
 
   constructor(private Product:ProductService, private cartService:CartService) { }
-
+ @Input()
+  products: Array<Product> = [];
   ngOnInit(): void {
-    this.dataSource = this.Product.dataSource;
+   // this.dataSource = this.Product.dataSource;
      this.displayedColumns = this.Product.displayedColumns;
-     this.products = this.Product.products;
+    this.products = this.Product.products;
+    
     
 
     this.cartService.getProducts()
     .subscribe(res=>{
       this.products = res;
       this.grandTotal = this.cartService.getTotalPrice();
+
+      this.products.forEach((a:any) => {
+        Object.assign(a,{quantity:1,total:a.price});
+      });
     })
+    
   }
-  @Input()
-  products: Array<Product> = [];
+   removeItem(item: any){
+    this.cartService.removeCartItem(item);
+  }
+  emptycart(){
+    this.cartService.removeAllCart();
+  }
+ 
 
 }

@@ -1,21 +1,53 @@
-
  <mat-card *ngIf="products.length !=0" >
     <mat-card-content class="card">
-        <ng-container >
+        <ng-container *ngIf="products.length !=0">
+            <div class="container">
+                <div class="card-table">
+                    <div class="cart-product">
+                        <table style="text-align:center;">
+                            <thead>
+                                <tr>
+                                    <th>Item</th>
+                                   
+                                    <th>Produto</th>
+                                    <th>Img</th>
+                                    <th>Drescrição</th>
+                                    <th>Preço</th>
+                                    <th>Quantidade</th>
+                                    
+                                    <th>Remover Item</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let item of products; let i = index">
+                                    <td>{{i+1}}</td>
+                                    <td>{{item.name}}</td>
+                                    <td><img style="width: 120px;" src="{{item.img}}" alt=""></td>
+                                    <td style="width: 25%;"><a [href]="item.datasheet">Datasheet</a></td>
+                                    <th style="width: 12%;">{{item.price | currency: 'BRL'}}</th>
+                                    <td style="width: 12%;">{{item.quantity}}</td>
+                                   
+                                    <td>
+                                        <button (click)="removeItem(item)" mat-icon-button="warn">
+                                            <mat-icon aria-hidden="false" aria-label="Example home icon" color="warn">delete</mat-icon>
+                                        </button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="4"></td>
+                                    <td><button (click)="emptycart()" mat-raised-button color="warn">Esvaziar carrinho</button></td>
+                                    <td><button routerLink="/home" mat-raised-button color="primary">Compre mais</button></td>
+                                    <!-- <td><button mat-raised-button color="primary">Compre Agora</button></td> -->
+                                    <td><strong>Total: {{grandTotal| currency: 'BRL'}}</strong></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
             
-            <tr *ngFor="let item of products; let i = index">
-                <td>{{i+1}}</td>
-                <!-- <td>{{item.title}}</td> -->
-                <td><img style="width: 120px;" src="{{item.img}}" alt=""></td>
-                <!-- <td style="width: 25%;">{{item.description}}</td> -->
-                <th style="width: 12%;">{{item.price}}</th>
-                <td style="width: 12%;">{{item.quantity}}</td>
-                <td style="width: 12%;">{{item.datasheet}}</td>
-                <td>
-                  
-                </td>
-            </tr>
-          </ng-container>
+        </ng-container> 
+        
       
      
     </mat-card-content>
@@ -45,6 +77,7 @@
         </div>
     </div>
 </ng-container>
+
 
 
 
